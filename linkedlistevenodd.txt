@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+  int data;
+  struct node *link;
+};
+int count_node(struct node *head)
+{
+
+  
+  int count1 = 0;
+  int count2 = 0;
+struct node *temp =  head;
+ while(temp!=NULL){
+    printf("%d ",temp->data);
+    temp=temp->link;
+ }
+
+ printf("\n\n\n");
+ temp =  head;
+   printf("Odd nodes are-> ");
+  while (temp != NULL)
+  { 
+   
+    if ((temp->data) % 2 != 0)
+    {
+       printf("\t%d",temp->data);
+      count1++;
+     
+    }
+    temp=temp->link;
+    
+    }
+     printf("\n");
+    printf("Even nodes are-> ");
+ temp =  head;
+    while (temp != NULL)
+  {
+   
+    if ((temp->data) % 2 == 0)
+    {
+       printf("\t%d ",temp->data);
+      count2++;
+       
+    }temp=temp->link;
+   
+    }
+
+ 
+  printf("\n\n odd nodes are %d,\t", count1);
+  printf("Even nodes are %d,\t", count2);
+
+  return count1+count2;
+}
+int main()
+{
+  struct node *head = (struct node *)malloc(sizeof(struct node));
+  struct node *first = (struct node *)malloc(sizeof(struct node));
+  struct node *second = (struct node *)malloc(sizeof(struct node));
+  struct node *third = (struct node *)malloc(sizeof(struct node));
+  struct node *fourth = (struct node *)malloc(sizeof(struct node));
+  struct node *fifth = (struct node *)malloc(sizeof(struct node));
+  struct node *sixth = (struct node *)malloc(sizeof(struct node));
+  struct node *seventh = (struct node *)malloc(sizeof(struct node));
+  struct node *eighth = (struct node *)malloc(sizeof(struct node));
+  struct node *ninth = (struct node *)malloc(sizeof(struct node));
+  struct node *tenth = (struct node *)malloc(sizeof(struct node));
+
+  head->data = 11;
+  first->data = 22;
+  second->data = 33;
+  third->data = 44;
+  fourth->data = 55;
+  fifth->data = 66;
+  sixth->data = 77;
+  seventh->data = 88;
+  eighth->data = 99;
+  ninth->data = 110;
+  tenth->data = 121;
+
+  head->link = first;
+  first->link = second;
+  second->link = third;
+  third->link = fourth;
+  fourth->link = fifth;
+  fifth->link = sixth;
+  sixth->link = seventh;
+  seventh->link = eighth;
+  eighth->link = ninth;
+  ninth->link = tenth;
+  tenth->link = NULL;
+  printf("Linked list is->\n");
+  int z = count_node(head);
+  printf("%d Nodes are there", z);
+}
